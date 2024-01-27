@@ -1,3 +1,5 @@
+[![Create Release](https://github.com/wollfieh/webdavserve/actions/workflows/release.yml/badge.svg)](https://github.com/wollfieh/webdavserve/actions/workflows/release.yml)
+
 # share directory
 
 share a directory as WebDAV on specified port
