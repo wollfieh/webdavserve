@@ -3,7 +3,8 @@ BINARY_NAME=webdavserve
 default: build-all
 
 dist: build-all
-	install -D ${BINARY_NAME}-* dist/${BINARY_NAME}
+	mkdir -p dist
+	cp ${BINARY_NAME}-* dist
 
 build-all: dep build-linux  build-mac
 
@@ -20,4 +21,4 @@ dep:
 	go mod tidy
 .PHONY: clean
 clean:
-	rm -rf ${BINARY_NAME} dist
+	rm -rf ${BINARY_NAME}-* dist
