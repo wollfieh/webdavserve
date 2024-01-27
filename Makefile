@@ -5,7 +5,7 @@ default: build-all
 dist: build-all
 	install -D ${BINARY_NAME}-* dist/${BINARY_NAME}
 
-build-all: build-linux  build-mac
+build-all: dep build-linux  build-mac
 
 # Build for Linux
 build-linux:
@@ -16,6 +16,8 @@ build-mac:
 	GOOS=darwin GOARCH=amd64 go build -o ${BINARY_NAME}-darwin-amd64 .
 
 
+dep:
+	go mod tidy
 .PHONY: clean
 clean:
 	rm -rf ${BINARY_NAME} dist
